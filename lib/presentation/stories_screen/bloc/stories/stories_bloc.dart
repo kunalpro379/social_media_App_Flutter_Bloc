@@ -1,114 +1,37 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import '../../bloc/stories/stories_event.dart';
 import '../../bloc/stories/stories_state.dart';
+import '../../models/stories.model.dart';
 import '../../models/stories_item.model.dart';
-import 'package:flutter/material.dart';
-
 import '../../models/live_events.model.dart';
 
 class StoriesBloc extends Bloc<StoriesEvent, StoriesState> {
   StoriesBloc(StoriesState initialState) : super(initialState) {
-    on<StoriesInitialEvent>(_onInitialize);
+    on<StoriesInitialEvent>(_onStoriesInitialEvent);
   }
+
   List<StoriesItemModel> fillStoriesItemList() {
     return [
       StoriesItemModel(
           storyind: "assets/images/story1.jpg",
           storyname: "kunal",
-          id: "#sto1"),
+          id: "#sto1"), // Make sure each ID is unique
       StoriesItemModel(
-          storyind: "assets/images/story1.jpg",
-          storyname: "kunal",
-          id: "#sto1"),
-      StoriesItemModel(
-          storyind: "assets/images/story1.jpg",
-          storyname: "kunal",
-          id: "#sto1"),
-      StoriesItemModel(
-          storyind: "assets/images/story1.jpg",
-          storyname: "kunal",
-          id: "#sto1"),
-      StoriesItemModel(
-          storyind: "assets/images/story1.jpg",
-          storyname: "kunal",
-          id: "#sto1"),
-      StoriesItemModel(
-          storyind: "assets/images/story1.jpg",
-          storyname: "kunal",
-          id: "#sto1"),
-      StoriesItemModel(
-          storyind: "assets/images/story1.jpg",
-          storyname: "kunal",
-          id: "#sto1"),
-      StoriesItemModel(
-          storyind: "assets/images/story1.jpg",
-          storyname: "kunal",
-          id: "#sto1"),
-      StoriesItemModel(
-          storyind: "assets/images/story1.jpg",
-          storyname: "kunal",
-          id: "#sto1"),
-      StoriesItemModel(
-          storyind: "assets/images/story1.jpg",
-          storyname: "kunal",
-          id: "#sto1"),
-      StoriesItemModel(
-          storyind: "assets/images/story1.jpg",
-          storyname: "kunal",
-          id: "#sto1"),
-      StoriesItemModel(
-          storyind: "assets/images/story1.jpg",
-          storyname: "kunal",
-          id: "#sto1"),
-      StoriesItemModel(
-          storyind: "assets/images/story1.jpg",
-          storyname: "kunal",
-          id: "#sto1"),
-      StoriesItemModel(
-          storyind: "assets/images/story1.jpg",
-          storyname: "kunal",
-          id: "#sto1"),
+          storyind: "assets/images/story2.jpg",
+          storyname: "rahul",
+          id: "#sto2"), // Example unique ID
+      // Add more items as needed
     ];
   }
 
-  List<ListLiveEventsModel> fillListLiveEventsList() {
-    return [
-      ListLiveEventsModel(
-          liveEventName: "Live Event 1",
-          liveEventTime: "10:00 AM",
-          liveEventImage: "assets/images/live1.jpg",
-          liveEventId: "#live1"),
-      ListLiveEventsModel(
-          liveEventName: "Live Event 1",
-          liveEventTime: "10:00 AM",
-          liveEventImage: "assets/images/live1.jpg",
-          liveEventId: "#live1"),
-      ListLiveEventsModel(
-          liveEventName: "Live Event 1",
-          liveEventTime: "10:00 AM",
-          liveEventImage: "assets/images/live1.jpg",
-          liveEventId: "#live1"),
-      ListLiveEventsModel(
-          liveEventName: "Live Event 1",
-          liveEventTime: "10:00 AM",
-          liveEventImage: "assets/images/live1.jpg",
-          liveEventId: "#live1"),
-      ListLiveEventsModel(
-          liveEventName: "Live Event 1",
-          liveEventTime: "10:00 AM",
-          liveEventImage: "assets/images/live1.jpg",
-          liveEventId: "#live1")
-    ];
-  }
-
-  _onInitialize(StoriesInitialEvent event, Emitter<StoriesState> emit) async {
+  Future<void> _onStoriesInitialEvent(
+      StoriesInitialEvent event, Emitter<StoriesState> emit) async {
     emit(state.copyWith(
       searchController: TextEditingController(),
+      storiesModelObj: StoriesModel(
+        storiesItemList: fillStoriesItemList(),
+      ),
     ));
-    emit(state.copyWith(
-        storiesModelObj: state.storiesModelObj?.copyWith(
-      storiesItemList: fillStoriesItemList(),
-      // LiveEventsList: fillListLiveEventsList()
-    )));
   }
 }
