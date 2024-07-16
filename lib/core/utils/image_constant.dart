@@ -1,4 +1,4 @@
-class ImageConstant {
+class ImgConstant {
   // Image folder path
   static String imagePath = 'assets/images';
 

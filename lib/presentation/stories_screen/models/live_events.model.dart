@@ -1,22 +1,20 @@
-import 'package:flutter/material.dart';
+import 'package:connectiva/core/utils/image_constant.dart';
 
 class ListLiveEventsModel {
-  ListLiveEventsModel(
-      {this.LiveEventImage,
-      this.id,
-      this.LiveEventName,
-      this.LiveEventTime,
-      this.price, required String liveEventName, required String liveEventTime, required String liveEventId, required String liveEventImage}) {
-    LiveEventImage = LiveEventImage ??
-        Image(image: AssetImage("assets/images/cricket_event.webp"));
-    LiveEventName = LiveEventName ?? "Live Event 1";
-    LiveEventTime = LiveEventTime ?? "10:00 AM";
-    price = price ?? "Free to Join";
-    id = id ?? "#live";
-  }
-  String? id;
-  Image? LiveEventImage;
-  String? LiveEventName;
-  String? LiveEventTime;
+  String? liveEvent1;
+  String? liveEvent2;
   String? price;
+  String? id;
+
+  ListLiveEventsModel({
+    this.liveEvent1,
+    this.liveEvent2,
+    this.price,
+    this.id,
+  }) {
+    liveEvent1 = liveEvent1 ?? ImgConstant.img19179x147;
+    liveEvent2 = liveEvent2 ?? "LIVE | Event description here";
+    price = price ?? "19:00 | Event location";
+    id = id ?? "";
+  }
 }

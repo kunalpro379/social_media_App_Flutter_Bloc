@@ -1,4 +1,3 @@
-// size_utils.dart
 import 'package:flutter/widgets.dart';
 
 class SizeUtils {

@@ -19,7 +19,7 @@ class SplashScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomImageView(
-                imagePath: ImageConstant
+                imagePath: ImgConstant
                     .imgSocialMedia1, // Ensure ImageConstant is correctly imported and used
                 height: 120
                     .adaptSize, // adaptSize is a custom extension or function for responsive design

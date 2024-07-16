@@ -3,13 +3,14 @@
 import 'dart:io';
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:connectiva/global_classes/Image_Grid.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomImageView extends StatelessWidget {
   ///[imagePath] is required parameter for showing image
   String? imagePath;
-
+  final ImgGrid? imgGrid;
   double? height;
   double? width;
   Color? color;
@@ -24,6 +25,7 @@ class CustomImageView extends StatelessWidget {
   ///a [CustomImageView] it can be used for showing any type of images
   /// it will shows the placeholder image if image is not found on network image
   CustomImageView({
+    super.key,
     this.imagePath,
     this.height,
     this.width,
@@ -35,6 +37,7 @@ class CustomImageView extends StatelessWidget {
     this.margin,
     this.border,
     this.placeHolder = 'assets/images/image_not_found.png',
+    this.imgGrid,
   });
 
   @override

@@ -1,13 +1,13 @@
 import 'package:connectiva/core/utils/size_utils.dart';
 import 'package:connectiva/presentation/stories_screen/models/stories_item.model.dart';
-import 'package:connectiva/theme/app_decoration.dart';
-import 'package:connectiva/widgets/custom_image_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class StoriesItemWidget extends StatelessWidget {
   StoriesItemWidget(this.storiesItemModelObj, {Key? key}) : super(key: key);
-  StoriesItemModel storiesItemModelObj;
+
+  final StoriesItemModel storiesItemModelObj;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -15,18 +15,21 @@ class StoriesItemWidget extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 65.adaptSize,
-            width: 65.adaptSize,
-            padding: EdgeInsets.symmetric(horizontal: 4.h, vertical: 3.v),
-            decoration: AppDecoration.outlineDeepPurpleA.copyWith(
-              borderRadius: BorderRadiusStyle.circleBorder25,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: Color.fromARGB(255, 91, 116, 255),
+                width: 2.0, // Adjust the width as needed
+              ),
             ),
-            child: CustomImageView(
-              imagePath: storiesItemModelObj.storyind,
-              height: 55.v,
-              width: 52.h,
-              radius: BorderRadius.circular(26.h),
-              alignment: Alignment.center,
+            child: CircleAvatar(
+              radius: 50.h,
+              backgroundColor: Colors.white,
+              child: CircleAvatar(
+                radius: 38.h,
+                backgroundColor: Colors.white,
+                //  backgroundImage: AssetImage(storiesItemModelObj.storyind),
+              ),
             ),
           ),
           SizedBox(height: 5.v),

@@ -37,6 +37,21 @@ class SizeUtils {
   static late double height;
   static late double width;
 
+  static double verticalSize(double size) {
+    // Implement the logic to calculate vertical size based on your design
+    return size;
+  }
+
+  static double horizontalSize(double size) {
+    // Implement the logic to calculate horizontal size based on your design
+    return size;
+  }
+
+  static double adaptSize(double size) {
+    // Implement the logic to adapt size based on your design
+    return size;
+  }
+
   static void setScreenSize(
     BoxConstraints constraints,
     Orientation currentOrientation,

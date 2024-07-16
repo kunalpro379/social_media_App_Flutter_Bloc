@@ -22,6 +22,11 @@ dependencies:
   equatable: ^2.0.5
   bloc: ^8.1.4
   flutter_bloc: ^8.1.6
+  crystal_navigation_bar: ^1.0.0
+  flutter_staggered_animations: ^1.1.1
+  shimmer: ^3.0.0
+  custom_sliding_segmented_control: ^1.8.3
+  flutter_card_swiper: ^7.0.1
 
 dev_dependencies:
   flutter_test:

@@ -15,7 +15,7 @@ class AppRoutes {
 
   static const String inviteFriendsScreen = '/invite_friends_screen';
 
-  static const String discoverPage = '/discover_page';
+  static const String ExplorePage = '/discover_page';
 
   static const String dailyNewPage = '/daily_new_page';
 
@@ -27,7 +27,7 @@ class AppRoutes {
   static const String trendingTabContainerScreen =
       '/trending_tab_container_screen';
 
-  static const String storiesPage = '/stories_page';
+  static const String stories = '/stories_page';
 
   static const String storiesContainerScreen = '/stories_container_screen';
 
@@ -41,6 +41,7 @@ class AppRoutes {
   static const String searchScreen = '/search_screen';
 
   static const String liveScreen = '/live_screen';
+  static const String explore = '/explore';
 
   static const String forYouScreen = '/for_you_screen';
 
@@ -52,21 +53,41 @@ class AppRoutes {
 
   static const String accountDetailsScreen = '/account_details_screen';
 
-  static const String messagesPage = '/messages_page';
+  static const String messages = '/messages_page';
 
-  static const String chatScreen = '/chat_screen';
+  static const String chats = '/chat_screen';
 
   static const String friendsScreen = '/friends_screen';
 
-  static const String notificationsPage = '/notifications_page';
+  static const String notifications = '/notifications_page';
 
-  static const String profilePage = '/profile_page';
+  static const String profile = '/profile_page';
 
   static const String detailedProfileScreen = '/detailed_profile_screen';
 
   static const String appNavigationScreen = '/app_navigation_screen';
+  static const String a = '/a';
+  static const String b = '/b';
+  static const String c = '/c';
+  static const String d = '/d';
+  static const String e = '/e';
 
-//   static Map<String, WidgetBuilder> routes = {
+  static Map<String, WidgetBuilder> routes = {
+    a: (context) => Container(
+          color: Colors.amber,
+        ),
+    b: (context) => Container(
+          color: Color.fromARGB(255, 255, 0, 0),
+        ),
+    c: (context) => Container(
+          color: const Color.fromARGB(255, 7, 255, 23),
+        ),
+    d: (context) => Container(
+          color: const Color.fromARGB(255, 7, 110, 255),
+        ),
+    e: (context) => Container(
+          color: const Color.fromARGB(255, 255, 7, 168),
+        )
 //     splashScreen: (context) => SplashScreen(),
 //     loginScreen: (context) => LoginScreen(),
 //     logInScreen: (context) => LogInScreen(),
@@ -91,5 +112,5 @@ class AppRoutes {
 //     friendsScreen: (context) => FriendsScreen(),
 //     detailedProfileScreen: (context) => DetailedProfileScreen(),
 //     appNavigationScreen: (context) => AppNavigationScreen()
-//   };
+  };
 }
