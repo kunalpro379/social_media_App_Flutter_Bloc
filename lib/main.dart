@@ -80,15 +80,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
-
-
-
-
-
 /*
-
-
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -116,58 +108,43 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// */
 
+// // class _MyAppState extends State<MyApp> {
+// //   @override
+// //   void initState() {
+// //     super.initState();
+// //     WidgetsBinding.instance.addPostFrameCallback((_) {
+// //       SizeUtils.init(context);
+// //     });
+// //   }
 
-
-
-
-
-
-
-
-
-*/
-
-
-
-
-
-
-// class _MyAppState extends State<MyApp> {
-//   @override
-//   void initState() {
-//     super.initState();
-//     WidgetsBinding.instance.addPostFrameCallback((_) {
-//       SizeUtils.init(context);
-//     });
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MultiBlocProvider(
-//       providers: [
-//         BlocProvider<ExploreContainerBloc>(
-//           create: (context) => ExploreContainerBloc(
-//             ExploreContentState(
-//               exploreContentModelObj: ExploreContentModel(),
-//             ),
-//           ),
-//         ),
-//       ],
-//       child: MaterialApp(
-//         title: 'Flutter Bottom Navigation Bar',
-//         theme: ThemeData(
-//           primarySwatch: Colors.blue,
-//           visualDensity: VisualDensity.adaptivePlatformDensity,
-//         ),
-//         initialRoute: AppRoutes.ExplorePage,
-//         routes: {
-//           AppRoutes.ExplorePage: (context) => ExploreContent.builder(context),
-//           AppRoutes.stories: (context) => StoriesScreen(),
-//           // Remove the duplicate route
-//           // AppRoutes.ExplorePage: (context) => ExploreContent(),
-//         },
-//       ),
-//     );
-//   }
-// }
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return MultiBlocProvider(
+// //       providers: [
+// //         BlocProvider<ExploreContainerBloc>(
+// //           create: (context) => ExploreContainerBloc(
+// //             ExploreContentState(
+// //               exploreContentModelObj: ExploreContentModel(),
+// //             ),
+// //           ),
+// //         ),
+// //       ],
+// //       child: MaterialApp(
+// //         title: 'Flutter Bottom Navigation Bar',
+// //         theme: ThemeData(
+// //           primarySwatch: Colors.blue,
+// //           visualDensity: VisualDensity.adaptivePlatformDensity,
+// //         ),
+// //         initialRoute: AppRoutes.ExplorePage,
+// //         routes: {
+// //           AppRoutes.ExplorePage: (context) => ExploreContent.builder(context),
+// //           AppRoutes.stories: (context) => StoriesScreen(),
+// //           // Remove the duplicate route
+// //           // AppRoutes.ExplorePage: (context) => ExploreContent(),
+// //         },
+// //       ),
+// //     );
+// //   }
+// // }

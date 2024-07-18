@@ -51,6 +51,11 @@ class StoriesScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Container(
+                      width: 10,
+                      height: 10,
+                      color: Colors.white,
+                    ),
                     BlocProvider<LikeBloc>(
                       create: (_) => LikeBloc(),
                       child: MorningBuzz(),
@@ -86,7 +91,40 @@ class StoriesScreen extends StatelessWidget {
                         );
                       },
                     ),
-                    BuildEvents(),
+                    Padding(
+                      padding: EdgeInsets.only(left: 18.h),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Events",
+                            style: Theme.of(context).textTheme.headlineSmall,
+                          ),
+                          SizedBox(height: 15.v),
+                          SizedBox(
+                            height: 250.v,
+                            child: BlocBuilder<StoriesBloc, StoriesState>(
+                              builder: (context, state) {
+                                return ListView.separated(
+                                  scrollDirection: Axis.horizontal,
+                                  itemBuilder: (context, index) {
+                                    ListLiveEventsModel model = state
+                                        .storiesModelObj!
+                                        .listLiveEventsItems[index];
+                                    return ListLiveEventsItemWidget(model);
+                                  },
+                                  separatorBuilder: (context, index) {
+                                    return SizedBox(width: 16.h);
+                                  },
+                                  itemCount: state.storiesModelObj!
+                                      .listLiveEventsItems.length,
+                                );
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -205,7 +243,7 @@ class BuildEvents extends StatelessWidget {
         children: [
           Text(
             "Events",
-            style: theme.textTheme.headlineSmall,
+            style: Theme.of(context).textTheme.headlineSmall,
           ),
           SizedBox(height: 15.v),
           SizedBox(
