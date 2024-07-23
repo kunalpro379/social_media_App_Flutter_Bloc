@@ -1,6 +1,6 @@
-import '../models/stories_item.model.dart';
-import '../models/live_events.model.dart';
 import 'package:equatable/equatable.dart';
+import 'stories_item.model.dart';
+import 'live_events.model.dart';
 
 class StoriesModel extends Equatable {
   StoriesModel({

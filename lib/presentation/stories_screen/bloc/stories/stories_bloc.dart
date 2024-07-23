@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import '../../bloc/stories/stories_event.dart';
-import '../../bloc/stories/stories_state.dart';
+import 'stories_event.dart';
+import 'stories_state.dart';
 import '../../models/stories.model.dart';
 import '../../models/stories_item.model.dart';
 import '../../models/live_events.model.dart';

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "172722157291",
+    "project_id": "connectivs-90570",
+    "storage_bucket": "connectivs-90570.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172722157291:android:4a0a727e2421c14d52b0ae",
+        "android_client_info": {
+          "package_name": "com.example.connectiva"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXZH3j5spLiQutRnrqudTp35zFzNEsfDs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172722157291:android:b04392ec260d860e52b0ae",
+        "android_client_info": {
+          "package_name": "com.example.flutter_live_streaming_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXZH3j5spLiQutRnrqudTp35zFzNEsfDs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

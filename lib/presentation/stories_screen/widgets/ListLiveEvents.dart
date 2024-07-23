@@ -7,10 +7,9 @@ import 'package:connectiva/widgets/custom_image_view.dart';
 import 'package:flutter/material.dart';
 
 class ListLiveEventsItemWidget extends StatelessWidget {
-  final ListLiveEventsModel listLiveEventsItemModelObj;
+  final LiveEvent liveEvent;
 
-  ListLiveEventsItemWidget(this.listLiveEventsItemModelObj, {Key? key})
-      : super(key: key);
+  ListLiveEventsItemWidget(this.liveEvent, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +25,7 @@ class ListLiveEventsItemWidget extends StatelessWidget {
               alignment: Alignment.topLeft,
               children: [
                 CustomImageView(
-                  imagePath: listLiveEventsItemModelObj.liveEvent1!,
+                  imagePath: liveEvent.liveEvent1!,
                   height: 145.v,
                   width: 150.h,
                   radius: BorderRadius.circular(10.h),
@@ -53,15 +52,36 @@ class ListLiveEventsItemWidget extends StatelessWidget {
           ),
           SizedBox(height: 18.v),
           Text(
-            listLiveEventsItemModelObj.liveEvent2!,
+            liveEvent.liveEvent2!,
             style: CustomTextStyles.titleSmallBlack90001,
           ),
           SizedBox(height: 6.v),
           Text(
-            listLiveEventsItemModelObj.price!,
+            liveEvent.price!,
             style: CustomTextStyles.labelLargeBluegray400,
           ),
         ],
+      ),
+    );
+  }
+}
+
+class ListLiveEvents extends StatelessWidget {
+  final ListLiveEventsModel listLiveEventsModel;
+
+  ListLiveEvents({required this.listLiveEventsModel});
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: listLiveEventsModel.liveEvents.map((event) {
+          return Padding(
+            padding: EdgeInsets.only(right: 8.0),
+            child: ListLiveEventsItemWidget(event),
+          );
+        }).toList(),
       ),
     );
   }

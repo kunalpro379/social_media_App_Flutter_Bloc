@@ -1,0 +1,1 @@
+const blogapi="AIzaSyDEStyOQpVZBdw6zwHJrCudgMlmiZ4Xdgo";

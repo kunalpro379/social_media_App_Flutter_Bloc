@@ -1,0 +1,44 @@
+<!-- public/show.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camera Frames Display</title>
+  <style>
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+  <script>
+    // WebSocket connection
+    const ws = new WebSocket('ws://localhost:4000');
+
+    // When a WebSocket connection is established
+    ws.onopen = function() {
+      console.log('Connected to WebSocket server');
+    };
+
+    // When a message is received from the WebSocket server
+    ws.onmessage = function(event) {
+      const imageData = event.data; // Assuming image data is received as a string
+
+      // Update the image source to display the received image data
+      document.getElementById('cameraFrame').src = 'data:image/jpeg;base64,' + imageData; // Adjust based on your image data format
+    };
+
+    // When WebSocket connection is closed
+    ws.onclose = function() {
+      console.log('Disconnected from WebSocket server');
+    };
+  </script>
+</head>
+<body>
+  <h1>Camera Frames</h1>
+  <div>
+    <img id="cameraFrame" src="" alt="Camera Frame">
+  </div>
+</body>
+</html>

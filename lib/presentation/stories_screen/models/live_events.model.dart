@@ -1,12 +1,18 @@
 import 'package:connectiva/core/utils/image_constant.dart';
 
 class ListLiveEventsModel {
+  List<LiveEvent> liveEvents;
+
+  ListLiveEventsModel({required this.liveEvents});
+}
+
+class LiveEvent {
   String? liveEvent1;
   String? liveEvent2;
   String? price;
   String? id;
 
-  ListLiveEventsModel({
+  LiveEvent({
     this.liveEvent1,
     this.liveEvent2,
     this.price,
