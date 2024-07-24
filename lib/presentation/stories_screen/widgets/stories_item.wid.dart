@@ -32,11 +32,11 @@ class StoriesItemWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 5.v),
+          SizedBox(height: 2.v),
           Text(
             storiesItemModelObj.storyname!,
             style: TextStyle(
-              color: Colors.black,
+              color: const Color.fromARGB(255, 255, 255, 255),
               fontSize: 12,
             ),
           )

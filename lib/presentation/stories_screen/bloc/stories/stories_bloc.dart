@@ -21,6 +21,46 @@ class StoriesBloc extends Bloc<StoriesEvent, StoriesState> {
           storyind: "assets/images/story2.jpg",
           storyname: "rahul",
           id: "#sto2"), // Example unique ID
+      StoriesItemModel(
+          storyind: "assets/images/story1.jpg",
+          storyname: "kunal",
+          id: "#sto1"), // Make sure each ID is unique
+      StoriesItemModel(
+          storyind: "assets/images/story2.jpg",
+          storyname: "rahul",
+          id: "#sto2"),
+      StoriesItemModel(
+          storyind: "assets/images/story1.jpg",
+          storyname: "kunal",
+          id: "#sto1"), // Make sure each ID is unique
+      StoriesItemModel(
+          storyind: "assets/images/story2.jpg",
+          storyname: "rahul",
+          id: "#sto2"),
+      StoriesItemModel(
+          storyind: "assets/images/story1.jpg",
+          storyname: "kunal",
+          id: "#sto1"), // Make sure each ID is unique
+      StoriesItemModel(
+          storyind: "assets/images/story2.jpg",
+          storyname: "rahul",
+          id: "#sto2"),
+      StoriesItemModel(
+          storyind: "assets/images/story1.jpg",
+          storyname: "kunal",
+          id: "#sto1"), // Make sure each ID is unique
+      StoriesItemModel(
+          storyind: "assets/images/story2.jpg",
+          storyname: "rahul",
+          id: "#sto2"),
+      StoriesItemModel(
+          storyind: "assets/images/story1.jpg",
+          storyname: "kunal",
+          id: "#sto1"), // Make sure each ID is unique
+      StoriesItemModel(
+          storyind: "assets/images/story2.jpg",
+          storyname: "rahul",
+          id: "#sto2"),
       // Add more items as needed
     ];
   }

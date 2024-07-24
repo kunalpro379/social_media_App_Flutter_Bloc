@@ -1,0 +1,73 @@
+[
+    {
+      "name": "Alice Smith",
+      "timestamp": "2024-07-25T15:30:00Z",
+      "hashes": ["#NewFeature", "#AppUpdate"],
+      "zipcode": "67890",
+      "id": "post1"
+    },
+    {
+      "name": "Bob Johnson",
+      "timestamp": "2024-07-24T14:15:00Z",
+      "hashes": ["#FlutterDev", "#DartLang"],
+      "zipcode": "12345",
+      "id": "post2"
+    },
+    {
+      "name": "Charlie Brown",
+      "timestamp": "2024-07-23T09:00:00Z",
+      "hashes": ["#TechTrends", "#AI"],
+      "zipcode": "54321",
+      "id": "post3"
+    },
+    {
+      "name": "Diana Prince",
+      "timestamp": "2024-07-22T11:45:00Z",
+      "hashes": ["#CodingLife", "#WebDev"],
+      "zipcode": "67890",
+      "id": "post4"
+    },
+    {
+      "name": "Edward Elric",
+      "timestamp": "2024-07-21T10:30:00Z",
+      "hashes": ["#MachineLearning", "#DataScience"],
+      "zipcode": "23456",
+      "id": "post5"
+    },
+    {
+      "name": "Fiona Gallagher",
+      "timestamp": "2024-07-20T16:00:00Z",
+      "hashes": ["#Startup", "#Entrepreneur"],
+      "zipcode": "98765",
+      "id": "post6"
+    },
+    {
+      "name": "George Lucas",
+      "timestamp": "2024-07-19T13:20:00Z",
+      "hashes": ["#FilmMaking", "#StarWars"],
+      "zipcode": "34567",
+      "id": "post7"
+    },
+    {
+      "name": "Hannah Montana",
+      "timestamp": "2024-07-18T17:05:00Z",
+      "hashes": ["#Music", "#LivePerformance"],
+      "zipcode": "45678",
+      "id": "post8"
+    },
+    {
+      "name": "Ian Malcolm",
+      "timestamp": "2024-07-17T12:15:00Z",
+      "hashes": ["#Dinosaurs", "#JurassicPark"],
+      "zipcode": "56789",
+      "id": "post9"
+    },
+    {
+      "name": "Jenna Ortega",
+      "timestamp": "2024-07-16T18:25:00Z",
+      "hashes": ["#Acting", "#TVShows"],
+      "zipcode": "67890",
+      "id": "post10"
+    }
+  ]
+  

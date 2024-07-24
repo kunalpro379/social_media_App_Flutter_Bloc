@@ -9,19 +9,23 @@ class EventsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.all(2),
+    return Container(
+      margin: EdgeInsets.all(8), // Increased margin for better spacing
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Stack(
             children: [
-              Center(
-                child: Container(
+              ClipRRect(
+                borderRadius:
+                    BorderRadius.circular(8), // Optional: rounded corners
+                child: Card(
                   margin: EdgeInsets.all(0),
                   child: Image.network(
                     event.thumbnailUrl,
-                    fit: BoxFit.contain,
+                    width: 150, // Fixed width for the image
+                    height: 200, // Fixed height for the image
+                    fit: BoxFit.cover, // Ensure image covers the card area
                   ),
                 ),
               ),
@@ -43,9 +47,8 @@ class EventsCard extends StatelessWidget {
                 ),
             ],
           ),
+          SizedBox(height: 8), // Spacing between image and text
           Container(
-            width: 200,
-            height: 100,
             padding: EdgeInsets.all(8),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +57,9 @@ class EventsCard extends StatelessWidget {
                   event.title,
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
+                SizedBox(height: 4), // Spacing between text elements
                 Text(event.venue),
+                SizedBox(height: 4), // Spacing between text elements
                 Text(event.time),
               ],
             ),

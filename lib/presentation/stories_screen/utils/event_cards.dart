@@ -15,7 +15,7 @@ class EventList extends StatelessWidget {
         } else if (state is EventsLoaded) {
           final events = state.events;
           return SizedBox(
-            height: 240, // Adjust the height as needed
+            height: 400, // Adjust the height as needed
 
             child: ListView.builder(
               scrollDirection:

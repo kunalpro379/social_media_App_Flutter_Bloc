@@ -1,27 +1,22 @@
 import 'package:connectiva/core/utils/image_constant.dart';
-import 'package:connectiva/core/utils/size_utils.dart';
-import 'package:connectiva/global_classes/like_button/like_bloc.dart';
+
 import 'package:connectiva/presentation/stories_screen/bloc/stories/stories_event.dart';
-import 'package:connectiva/presentation/stories_screen/models/live_events.model.dart';
-import 'package:connectiva/presentation/stories_screen/widgets/ListLiveEvents.dart';
+
 import 'package:connectiva/widgets/custom_image_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import '../../core/utils/imageconstants.dart';
 import '../../global_classes/Image_Grid.dart';
-import '../../global_classes/like_button/like_event.dart';
-import '../../global_classes/like_button/like_state.dart';
-import '../../theme/theme_helper.dart';
+
 import 'bloc/live_events/event.bloc.dart';
 import 'bloc/live_events/event.event.dart';
-import 'bloc/live_events/event.state.dart';
 import 'bloc/stories/stories_bloc.dart';
 import 'bloc/stories/stories_state.dart';
 import 'models/stories.model.dart';
 import 'models/stories_item.model.dart';
 import 'utils/event_cards.dart';
 import 'widgets/stories_item.wid.dart';
+import 'package:shimmer/shimmer.dart';
 
 class StoriesScreen extends StatelessWidget {
   const StoriesScreen({Key? key}) : super(key: key);
@@ -37,9 +32,6 @@ class StoriesScreen extends StatelessWidget {
         BlocProvider(
           create: (context) => EventBloc()..add(LoadEvents()),
         ),
-        // BlocProvider(
-        //   create: (context) => LikeBloc(),
-        // ),
       ],
       child: StoriesScreen(),
     );
@@ -59,20 +51,23 @@ class StoriesScreen extends StatelessWidget {
                 ),
               ),
             ),
+            // Static Container (e.g., MorningBuzz) - Positioned
+            Positioned(
+              top: 20, // Adjust as needed
+              left: 20, // Adjust as needed
+              right: 20, // Optional: Adjust as needed
+              child: MorningBuzz(),
+            ),
+            // Scrollable content
             Positioned.fill(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 4.0),
-                child: SingleChildScrollView(
+              top:
+                  240, // Adjust this to avoid overlapping with static container
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                        width: 10,
-                        height: 10,
-                        color: Colors.white,
-                      ),
-                      MorningBuzz(),
-                      SizedBox(height: 20.v),
                       Text(
                         "Status",
                         style: TextStyle(
@@ -81,16 +76,24 @@ class StoriesScreen extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      SizedBox(height: 20.v),
+                      SizedBox(height: 20),
                       BlocBuilder<StoriesBloc, StoriesState>(
                         builder: (context, state) {
                           if (state.storiesModelObj == null) {
-                            return Center(child: CircularProgressIndicator());
+                            //Center(child: CircularProgressIndicator());
+                            return Shimmer.fromColors(
+                              baseColor: Colors.grey[300]!,
+                              highlightColor: Colors.grey[100]!,
+                              child: Container(
+                                height: 150,
+                                color: Colors.white,
+                              ),
+                            );
                           }
                           return SizedBox(
-                            height: 150.v,
+                            height: 150,
                             child: ListView.separated(
-                              padding: EdgeInsets.only(right: 14.h),
+                              padding: EdgeInsets.only(right: 14.0),
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context, index) {
                                 StoriesItemModel model = state
@@ -98,7 +101,7 @@ class StoriesScreen extends StatelessWidget {
                                 return StoriesItemWidget(model);
                               },
                               separatorBuilder: (context, index) {
-                                return SizedBox(width: 10.h);
+                                return SizedBox(width: 10.0);
                               },
                               itemCount:
                                   state.storiesModelObj!.storiesItemList.length,
@@ -106,12 +109,20 @@ class StoriesScreen extends StatelessWidget {
                           );
                         },
                       ),
-                      SizedBox(height: 20.v),
-                      //  BuildEvents(),
+                      SizedBox(height: 15),
+                      Text(
+                        "Live Events",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 15),
+                      ),
+                      SizedBox(height: 10),
                       BlocProvider(
                         create: (context) => EventBloc()..add(LoadEvents()),
                         child: EventList(),
                       ),
+                      SizedBox(height: 300), // Add extra space if needed
                     ],
                   ),
                 ),
@@ -168,31 +179,6 @@ class MorningBuzz extends StatelessWidget {
                 SizedBox(height: 10.0),
                 Row(
                   children: [
-                    //  BlocBuilder<LikeBloc, LikeState>(
-                    //    builder: (context, state) {
-                    //      bool isLiked = state.isLiked;
-
-                    //GestureDetector(
-                    // onTap: () {
-                    //   BlocProvider.of<LikeBloc>(context)
-                    //       .add(LikeButtonPressed(!isLiked));
-                    // },
-                    // child: Container(
-                    //   padding: EdgeInsets.all(8.0),
-                    //   decoration: BoxDecoration(
-                    //     color: isLiked ? Colors.blue : Colors.grey,
-                    //     shape: BoxShape.circle,
-                    //   ),
-                    //       child: Icon(
-                    //         isLiked
-                    //             ? Icons.thumb_up
-                    //             : Icons.thumb_up_outlined,
-                    //         color: Colors.white,
-                    //       ),
-                    //     ),
-                    //   );
-                    // },
-                    //),
                     SizedBox(width: 5.0),
                     Text("2200"),
                     SizedBox(width: 20.0),
@@ -213,55 +199,6 @@ class MorningBuzz extends StatelessWidget {
                   ],
                 ),
               ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class BuildEvents extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 18.h),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "Events",
-            style: Theme.of(context).textTheme.headlineSmall,
-          ),
-          SizedBox(height: 15.v),
-          SizedBox(
-            height: 250.v,
-            child: BlocBuilder<EventBloc, EventState>(
-              builder: (context, state) {
-                if (state is EventInitial) {
-                  return Center(child: CircularProgressIndicator());
-                } else if (state is EventsLoaded) {
-                  return ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      final model = state.events[index];
-                      return Container(
-                        width: 250, // Set a fixed width for each card
-                        child: EventList(),
-                      );
-                    },
-                    separatorBuilder: (context, index) {
-                      return SizedBox(width: 16.h);
-                    },
-                    itemCount: state.events.length,
-                  );
-                } else if (state is EventLoadError) {
-                  return Center(
-                      child: Text('Failed to load events: ${state.message}'));
-                } else {
-                  return Center(child: Text('Unexpected state'));
-                }
-              },
             ),
           ),
         ],
